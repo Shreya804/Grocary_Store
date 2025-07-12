@@ -1,6 +1,12 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+import { useAppContext } from './context/AppContext'
 
-function App() {
+const App = () => {
+  const location = useLocation();
+  const isSellerPath = location.pathname.includes("seller");
+  const { showUserLogin } = useAppContext();
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="text-center">
